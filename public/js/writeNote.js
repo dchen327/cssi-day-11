@@ -26,6 +26,7 @@ window.onload = () => {
     firebase.database().ref(`users/${googleUser.uid}`).push({
       title: noteTitle,
       text: noteText,
+      timestamp: new Date().getTime(),
     })
       .then(() => {
         console.log("db write successful");
